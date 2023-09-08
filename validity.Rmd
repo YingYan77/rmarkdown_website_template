@@ -39,6 +39,10 @@ tosco2 <- tosco2 %>% mutate(validity_check_needed = case_when(
 ))
 
 tosco2$validity_check_needed[is.na(tosco2$validity_check_needed)] = "No"
+
+# Clean the name bug
+tosco2$company_id <- ifelse(tosco2$company_id=="Etisalat Egypt", "EGY1", tosco2$company_id)
+
 ```
 
 ### Pie and Waterfall Chart for Vadility Check
