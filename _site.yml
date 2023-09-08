@@ -1,8 +1,8 @@
-navbar: 
-  title: Title
+name: "TOSCO 2.0 Current Coding Progress Overview"
+navbar:
+  title: "My Website"
   left:
-  - text: Main page
-    href: index.html
-output:
-  html_document:
-    theme: flatly
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html

@@ -32,8 +32,8 @@ library(highcharter)
 rm(list=ls())
 
 ## read data
-tosco2 <- read.csv("data/tosco2_updating.csv")
-progress <- read.csv("data/coding_progress.csv")
+tosco2 <- read.csv("tosco2_updating.csv")
+progress <- read.csv("coding_progress.csv")
 ```
 
 This page contains several graphs describing current TOSCO2.0 coding progress, aiming to showing current coding stage and enhancing coding efficiency. The data in use is [tosco2 updating data file](https://github.com/SeraphineM/tosco/blob/main/tosco-updating/tosco2_updating.csv) and ISP company allocation table on the [Github landing page](https://github.com/SeraphineM/tosco/blob/main/tosco%20coding/README.md). 
