@@ -53,9 +53,9 @@ progress_status$code_status[5] <- "Coded"
 ### Overview
 In total there are 197 ISP companies in the coding list at the [landing page](https://github.com/SeraphineM/tosco/blob/main/tosco%20coding/README.md), which need to be checked for any updates. The following pie chart shows below information:
 
-- Up to 25 August, **60.9%** (120 out of 197) of those companies have been either coded or checked as ceased. 
-- **13.2%** (i.e. 26) of companies have been taken by a coder but its corresponding data haven't been updated in the tosco2_updating file. 
-- This left 51 companies (**25.9%**) waited to be code. 
+- Up to 11 September, **71.6%** (141 out of 197) of those companies have been either coded or checked as ceased. 
+- **10.2%** (i.e. 20) of companies have been taken by a coder but its corresponding data haven't been updated in the tosco2_updating file. 
+- This left 36 companies (**18.3%**) waited to be code. 
 
 ```{r Aggregated Pie Chart, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
 ## coding progress grouping
@@ -74,7 +74,15 @@ agg_progress %>%
     tooltip = list(pointFormat = "{series.name}: {point.freq:.1f}% ({point.n})"))) %>% 
   hc_title(
     text = "Aggregated Coding Progress (based on ISPs)"
-  )
+  ) %>%
+  hc_subtitle(
+    text = "This pie chart shows 71.6% of total ISP comapnies has been coded, and 
+    56 companies still need to be coded later on."
+  ) %>%
+  hc_credits(enabled = TRUE, 
+             text = "Data Source: TOSCO Landing Page Company Allocation Table",
+             style = list(fontSize = "10px"))
+
 ```
 
 ### By country
@@ -117,7 +125,15 @@ hcmap(
     maxColor = "#8C7527"
   ) |> 
   hc_mapNavigation(enabled = TRUE) |>
-  hc_size(width = 900, height = 600)
+  hc_size(width = 900, height = 600) |>
+  hc_subtitle(
+    text = "This map shows the percentage of coding completness by country. The 
+    darker the shades, the more companies have been coded in that country."
+  ) |>
+  hc_credits(enabled = TRUE, 
+             text = "Data Source: TOSCO Landing Page Company Allocation Table;\n
+             tosco2.0_updating.csv",
+             style = list(fontSize = "10px"))
 
 
 ```

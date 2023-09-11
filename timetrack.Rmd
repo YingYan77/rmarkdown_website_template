@@ -27,7 +27,7 @@ progress <- read.csv("coding_progress.csv")
 
 Following bar chart shows the break-down summary of number of data entries has been coded each month, grouped by coder and excluding corrected data. Note each ISP company may have multiple data entries for a given year. 
 
-**July** and **May** have the highest volume of data entry (more than 200 entries each). 
+**July**, **May** and **August** have the highest volume of data entry (more than 200 entries each). 
 
 ```{r date data clean, echo=FALSE, warning=FALSE}
 # Function to convert date strings with timestamps
@@ -98,6 +98,13 @@ timeseries %>% arrange(desc(month)) %>% hchart(
 ) %>%
   hc_title(
     text = "Number of Data Entries Coded per Month and Coder"
-)
+) %>%
+  hc_subtitle(
+    text = "Following bar chart shows the break-down summary of number of data entries has been coded each month, grouped by coder and excluding corrected data. In May, July and August, more than 200 data entires have been coded."
+  ) %>%
+  hc_credits(enabled = TRUE, 
+             text = "Data Source: 
+             tosco2.0_updating.csv",
+             style = list(fontSize = "10px"))
 
 ```

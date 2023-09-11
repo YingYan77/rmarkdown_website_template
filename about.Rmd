@@ -27,7 +27,7 @@ progress <- read.csv("coding_progress.csv")
 This Bar chart gives a summary of the number of data points that need to be corrected later on, which is marked as "company_id" plus '_correct' when we use the Google form to collect data. 
 
 - Currently there are **28** observations that need to be overwritten by its corrected-version in tosco2 updating dataset. 
-- So far we've coded **936** rows, ignoring the additional correction rows. 
+- So far we've coded **1,109** rows, ignoring the additional correction rows. 
 
 ```{r Correction bar chart, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
 correct <- grep("_correct$|-correct$", tosco2$company_id, value = TRUE)
@@ -43,9 +43,12 @@ tosco2$correct_needed[is.na(tosco2$correct_needed)] = "No"
 correct_needed <- tosco2 %>% group_by(correct_needed) %>% 
   summarise(n=n()) %>% mutate(freq = round(n / sum(n), 3))
 
+correct_needed$correct_needed[1] = "Total number of observations coded"
+correct_needed$correct_needed[2] = "Number of observations that need a correction"
+
 correct_needed %>% hchart(type = "bar",
                           hcaes(x = correct_needed, y = n), 
-                          name = "Correction Needed") %>%
+                          name = "Number of Observation") %>%
   hc_colors(c("#AFB0B2", "#110F14")) %>% 
   hc_plotOptions(
     bar = list(
@@ -57,6 +60,13 @@ correct_needed %>% hchart(type = "bar",
   hc_xAxis(
     title = list(text = "")) %>% 
   hc_yAxis(
-    title = list(text = "Number of Observation"))
+    title = list(text = "Number of Observation")) %>%
+    hc_subtitle(
+    text = "There are 28 observations that need manually correct later on. 
+    Excluding them, we've coded 1049 data points in total."
+  ) %>%
+  hc_credits(enabled = TRUE, 
+             text = "Data Source: Data Collected From Google Form",
+             style = list(fontSize = "10px"))
 ```
 

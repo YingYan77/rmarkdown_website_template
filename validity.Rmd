@@ -46,7 +46,7 @@ tosco2$company_id <- ifelse(tosco2$company_id=="Etisalat Egypt", "EGY1", tosco2$
 ```
 
 ### Pie and Waterfall Chart for Vadility Check
-First, this is an overall view of the number of data entries that need vadility check. There are in total **84** data points need validity check, which account for **9%** of coded data, excluding the correction data. They are distributed quite evenly over years, similar to those data that do not need validity check. 
+First, this is an overall view of the number of data entries that need vadility check. There are in total **84** data points need validity check, which account for **7.6%** of coded data, excluding the correction data. They are distributed quite evenly over years, similar to those data that do not need validity check. This indicates that most companies continue operating until now.
 
 ```{r the validity summary, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
 validity_check_table <- tosco2 %>% 
@@ -95,8 +95,16 @@ highchart() |>
     )) |>  
   hc_colors(c("#8EAABC", "#163A5F")) |>
   hc_title(
-    text = "Number of Data Entries that Validity Check"
-  )
+    text = "Number of Data Entries that Need Validity Check"
+  ) |> 
+    hc_subtitle(
+    text = "The Pie chart shows an aggregated ratio of data that need validity check, and 
+    the waterfall shows details over year 2020, 2021 and 2022."
+  ) |>
+  hc_credits(enabled = TRUE, 
+             text = "Data Source: 
+             tosco2.0_updating.csv",
+             style = list(fontSize = "10px"))
 
 
 ```
@@ -150,7 +158,15 @@ validity_check_list %>%
   ) %>%
   hc_title(
     text = "ISP Companies That Need Validity Check"
-  )
+  ) %>%
+    hc_subtitle(
+    text = "This bubble chart groups data that need validity check by company and country, 
+    which helps us to identify the countries or companies of most concern."
+  ) %>%
+  hc_credits(enabled = TRUE, 
+             text = "Data Source: 
+             tosco2.0_updating.csv",
+             style = list(fontSize = "10px"))
 
 
 ```
