@@ -46,7 +46,7 @@ tosco2$company_id <- ifelse(tosco2$company_id=="Etisalat Egypt", "EGY1", tosco2$
 ```
 
 ### Pie and Waterfall Chart for Vadility Check
-First, this is an overall view of the number of data entries that need vadility check. There are in total **87** data points need validity check, which account for **7.7%** of coded data, excluding the correction data. They are distributed quite evenly over years, similar to those data that do not need validity check. This indicates that most companies continue operating until now.
+First, this is an overall view of the number of data entries that need vadility check. There are in total **90** data points need validity check, which account for **7.7%** of coded data, excluding the correction data. They are distributed quite evenly over years, similar to those data that do not need validity check. This indicates that most companies continue operating until now.
 
 ```{r the validity summary, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
 validity_check_table <- tosco2 %>% 
@@ -160,7 +160,7 @@ validity_check_list %>%
     text = "ISP Companies That Need Validity Check"
   ) %>%
     hc_subtitle(
-    text = "This bubble chart groups data that need validity check by company and country, 
+    text = "This bubble chart groups rows that need validity check by company and country, 
     which helps us to identify the countries or companies of most concern."
   ) %>%
   hc_credits(enabled = TRUE, 

@@ -2,7 +2,7 @@
 ---
 title: "TOSCO2.0 Coding Progress Analysis"
 author: "Ying Yan"
-date: "Last update: 2023-09-12"
+date: "Last update: 2023-09-19"
 output: html_document
 ---
 
@@ -53,8 +53,8 @@ progress_status$code_status[5] <- "Coded"
 ### Overview
 In total there are 197 ISP companies in the coding list at the [landing page](https://github.com/SeraphineM/tosco/blob/main/tosco%20coding/README.md), which need to be checked for any updates. The following pie chart shows below information:
 
-- Up to 11 September, **72.1%** (142 out of 197) of those companies have been either coded or checked as ceased. 
-- **9.6%** (i.e. 19) of companies have been taken by a coder but its corresponding data haven't been updated in the tosco2_updating file. 
+- Up to 11 September, **74.6%** (147 out of 197) of those companies have been either coded or checked as ceased. 
+- **7.1%** (i.e. 14) of companies have been taken by a coder but its corresponding data haven't been updated in the tosco2_updating file. 
 - This left 36 companies (**18.3%**) waited to be code. 
 
 ```{r Aggregated Pie Chart, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
@@ -76,7 +76,7 @@ agg_progress %>%
     text = "Aggregated Coding Progress (based on ISPs)"
   ) %>%
   hc_subtitle(
-    text = "This pie chart shows 72.1% of total ISP comapnies has been coded, and 
+    text = "This pie chart shows 74.6% of total ISP comapnies has been coded, and 
     55 companies still need to be coded later on."
   ) %>%
   hc_credits(enabled = TRUE, 
