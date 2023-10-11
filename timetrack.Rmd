@@ -85,7 +85,7 @@ timeseries <- tosco2 %>%
   group_by(month, coder_name) %>% 
   summarise(n=n())
 
-month_name <- c("Dec","Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep")
+month_name <- c("Dec","Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct")
 
 timeseries %>% arrange(desc(month)) %>% hchart(
   'column', hcaes(x = 'month', y = 'n', group = 'coder_name'), 
