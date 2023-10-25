@@ -46,7 +46,7 @@ tosco2$company_id <- ifelse(tosco2$company_id=="Etisalat Egypt", "EGY1", tosco2$
 ```
 
 ### Pie and Waterfall Chart for Vadility Check
-First, this is an overall view of the number of data entries that need vadility check. There are in total **112** data points need validity check, which account for **8.7%** of coded data, excluding the correction data. They are distributed quite evenly over years, similar to those data that do not need validity check. This indicates that most companies continue operating until now.
+First, this is an overall view of the number of data entries that need vadility check. There are in total **118** data points need validity check, which account for **8.8%** of coded data, excluding the correction data. They are distributed quite evenly over years, similar to those data that do not need validity check. This indicates that most companies continue operating until now.
 
 ```{r the validity summary, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
 validity_check_table <- tosco2 %>% 
