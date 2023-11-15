@@ -27,7 +27,7 @@ progress <- read.csv("coding_progress.csv")
 This Bar chart gives a summary of the number of data points that need to be corrected later on, which is marked as "company_id" plus '_correct' when we use the Google form to collect data. 
 
 - Currently there are **28** observations that need to be overwritten by its corrected-version in tosco2 updating dataset. 
-- So far we've coded **1,422** rows, ignoring the additional correction rows. 
+- So far we've coded **1,453** rows, ignoring the additional correction rows. 
 
 ```{r Correction bar chart, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
 correct <- grep("_correct$|-correct$", tosco2$company_id, value = TRUE)
